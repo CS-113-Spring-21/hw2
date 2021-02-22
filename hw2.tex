@@ -19,7 +19,7 @@
 \newcommand\ol\overline
 
 \title{Homework 2: Logic 1\\ CS 113 Discrete Mathematics\\ Habib University -- Spring 2021}
-\author{Don't Grade Me}  % replace with your ID, e.g. oy02945
+\author{hk06665-mj06879 }  % replace with your ID, e.g. oy02945
 \date{}
 
 \begin{document}
@@ -32,13 +32,42 @@
 \question Prove or disprove the following claims using truth tables. In each case, explicitly state your conclusion and how it is supported by the truth table.
   \begin{parts}
   \part[5] $\neg(p \lor q) \equiv \neg p \land \neg q $.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution} \\
+          \begin{tabular}{|c|c|c|c|c|}
+          \hline
+                p & q & $p \lor q$ & $\neg(p \lor q)$ & $\neg p \lor \neg q $ \\
+           \hline
+                T & T & T & F & F \\
+           \hline
+                F & F & F & T & T \\
+           \hline
+                T & F & T & F & F \\
+            \hline
+                F & T & T & F & F \\
+            \hline
+          \end{tabular}\\
+          The truth table above proves that $\neg (p \lor q)$ is equal to $\neg p \land \neg q $
     \end{solution}
 
   \part[5] $ (p \lor q) \implies \neg r \equiv (\neg p \land \neg q) \land \neg r$.
     \begin{solution} For ease of notation, let
-      % Enter your solution here.
+      A = $(p \lor q)$ and B = $\neg p \land \neg q$
+      \begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+           A & B & r & $\neg r$ &  $ A \implies \neg r$ & $(B \land \neg r$\\
+        \hline
+           T & F & T & F & F & F\\
+        \hline
+           T & F  & F & T & T & F\\
+        \hline
+           F & T & T & F & T & F\\
+        \hline
+           F & T & F & T & F & T\\
+        \hline
+      \end{tabular}
+      \end{center}
+    The table above disproves the claim that $ (p \lor q) \implies \neg r \equiv (\neg p \land \neg q) \land \neg r$
     \end{solution}
     
   \end{parts}
@@ -47,11 +76,25 @@
   \begin{parts}
   \part[5] Identify three simple propositions, $p, q, \text{ and } r$, needed for the representation and write out the corresponding expression that uses them to represent the given sentence.
     \begin{solution} % Complete the solution.
-      % Enter your solution here.
+      The simple proposition are as follows:\\
+      \begin{tabularx}{\textwidth}{1@{ : }X}
+       $p$ & The person is cool. \\
+       $r$ & The person is popular. \\
+       $q$ & The person is funny. \\
+      \end {tabularx}
+      \begin{center}
+        \centreline{The expression is : $p \lor q \rightarrow r$.}   
+      \end{center}
     \end{solution}
   \part[5] For your expression identified above, write the converse, contrapositive, and inverse in propositional logic as well as complete English sentences.
     \begin{solution} % Complete the solution.
-      % Enter your solution here.
+      The expression is : $p \lor q \rightarrow r$.\\
+      \begin{tabularx}{\textwidth}{l|l|X}
+        & Logical Notation & English sentence \\\hline\hline
+        Converse & $ r \rightarrow p \lor q $ & If the person is popular then he is cool or funny. \\\hline
+        Contrapositive & $ \neg r \rightarrow \neg(p \lor q)$ & If the person is not popular then he is not cool or funny. \\\hline
+        Inverse & $ \neg(p \lor q) \rightarrow \neg r $& If the person is not cool or funny then he is not popular.
+      \end{tabularx}
     \end{solution}
   \end{parts}
 
@@ -65,7 +108,17 @@
   \end{enumerate}
   Suppose that a customer places an order for a copper widget that is both green and blue with a matte coating. Your job is to determine which constraints are satisfied and which are violated and provide an explanation.
   \begin{solution} % Complete the solution.
-    % Enter your solution here.
+    In the table below, a value of 1 for a constraint indicates that the constraint is satisfied and a value of 0 indicates that it is violated.
+
+    \begin{tabularx}{\textwidth}{l|l|X}
+      Constraint & Satisfied & Explanation \\\hline
+      aluminum $\lor$ copper $\lor$ iron & 1 & For the constraint to be satisfied either one of the atomic prepositions must be true and the preposition copper is true. \\
+      aluminum $\implies$ grey & 1 & For the constraint to be false the premise must be true and the conclusion must be false. But in this case the hypothetical preposition aluminium is False so what comes in the conclusion does not matter and the overall statement is True.\\
+      copper $\land$ $\neg$ coated $\implies$ red & 0 & For the constraint to be False the premise must be true and the conclusion must be false and in this condition the premise is true that is the atomic prepositions on both sides of conjunction sign are true and also the conclusion is false so the overall constraint is false. \\
+      coated $\land$ $\neg$ copper $\implies$ green & 1 & The premise and the conclusion both are false so the overall constraint is true.  \\
+      green $\lor$ blue $\iff \neg$ textured $\land$ $\neg$ iron & 1 & For the biconditional
+      statement to be true the compound preposition son both sides must both be true or both be false. In this condition the both are false so the overall constraint is true.\\
+    \end{tabularx}
   \end{solution}
 
 
@@ -74,24 +127,57 @@
     Cards with $5$ on one side have $J$ on the other side.
   \end{center}
   Explain your choice.
-  \begin{solution}
-    % Enter your solution here.
+   \begin{solution}
+   In the table below, the value 1 is indicating that I will turn the card and value 0 is indicating that I will not turn it.\\
+   \begin{tabularx}{\textwidth}{1@{ : }X}
+       $p$ & Cards with 5 on one side.\\
+       $p$ & Cards with J on other side.\\
+   \end{tabularx}
+   \begin{center}
+       \centreline{the expression is : $p \rightarrow q $}
+   \end{center}
+   \begin{tabularx}{\textwidth}{c|c|X}
+    Card & Turn & Explanation \\ \hline
+   $A$ & 1  & The card should be turned because the conclusion of the statement is false and for the violation of the over condition, the premise should be True and if the back of this card is 5 then the rule is violated.\\
+   
+    $5$ & 1 & The card should be turned because the premise of the preposition is true and for the violation of the rule, the back of the card should not be J.\\
+    
+    $2$ & 0 &  The card should not be turned because the premise of the condition is false so it does not violate the rule either way.\\
+    
+    $J$ & 0 & The card should not be turned because the conclusion is true. the rule shall never be violated because it doesn't matter whether the premise is true or false.
+   \end{tabularx}
   \end{solution}
   
 \question An argument is said to be \textit{valid} if its \textit{conclusion} can be inferred from its \textit{premises}. An argument that is not valid is called an \textit{invalid} argument, or a \textit{fallacy}. For each of the arguments below, identify the simple propositions involved, write the premises and conclusion(s) in logical notation using the identified simple propositions, and decide whether it is valid. Justify your decision.
   \begin{parts}
   \part[5] If I am wealthy, then I am happy. I am happy, therefore, I am wealthy.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution} \\
+      W(x) = x is wealthy \\
+      H(x) = x is happy 
+      \[W(x) \implies H(x)\]
+      if H(x) is true then W(x) is also true 
     \end{solution}
   \part[5]
     If Ahmed drives his car, he is at least 18 years old. Ahmed does not drive a car. Therefore, Ahmed is not yet 18 years old. 
     \begin{solution}
-      % Enter your solution here.
+      C(x) = Ahmed drives his car 
+      A(x) = Ahmed is at least 18 years 
+      \[C(x) \implies A(x)\]
+      The above given logical notation is equal to its contrapositive:
+      \[\neg A(x) \implies \neg C(x)\]
+      This logical notation translates to: \\
+      Ahmed is not 18 implies that he cannot drive a car. Hence the argument is valid. 
     \end{solution}
   \part[5] If I study, then I will not fail CS 113. If I do not play cards too often, then I will study. I failed CS 113. Therefore, I played cards too often.
     \begin{solution}
-      % Enter your solution here.
+      S(x) = I will study \\
+      F(x) = I will fail \\
+      C(x) = I will play cards \\
+      \[S(x) \implies F(x)\]
+      \[\neg C(x) \implies S(x)\]
+      Contrapositive of second equation is :
+      \[\neg S(x) \implies C(x)\]
+      The above logical notation proves that the argument is valid. 
     \end{solution}
   \end{parts}
 
@@ -108,8 +194,30 @@
   You notice that there are people in Learn Courtyard. Where is the manual?
 
   Identify the relevant simple propositions to model the above in propositional logic. Represent the above situation using propositional logic and describe the steps needed to infer the location of the manual.
-  \begin{solution}
-    % Enter your solution here.
+  \begin{solution}\\
+    \begin{tabularx}{\textwidth}{l@{ : }X}
+        $p$ & Hint is at learn courtyard.\\
+        $q$ & Hint is at the gym.\\
+        $r$ & TA is sitting in Ehsas.\\
+        $a$ & TA is absent.\\
+        $s$ & People are in the learn courtyard. \\
+        $t$ & Manual is at the Zen Garden. \\
+        $u$ & Manual is at the earth courtyard.\\
+        $v$ & manual is at fire Courtyard.\\
+        \end{tabularx}
+        p $\lor$ q\\
+        r $\lor$ a $\rightarrow$ p\\
+        $\neg$ r $\rightarrow$ q\\
+        s $\rightarrow$ $\neg$ p\\
+        p $\rightarrow$ t\\
+        q $\rightarrow$ u\\
+        a $\rightarrow$ v\\
+        s\\
+        There are people in the learn courtyard this means that there is no hint at the learn courtyard.\\
+        s $\rightarrow$ $\neg$ p\\
+        if there is no hint at the learn courtyard then there must be a hint at gym\\
+        p $\lor$ q\\
+        if there is a hint at the gym then the manual is at earth courtyard.
   \end{solution}
 
 \section*{Predicate Logic}
@@ -117,8 +225,11 @@
 \question
   \begin{parts}
   \part[5] There is a third quantifier often used in predicate logic called the \textit{Uniqueness Quantifier}, $\exists!x\; P(x)$ which is read as, ``$P(x)$ is true for one and only one $x$ in the domain'', or ``there is a \textit{unique} $x$ such that $P(x)$''. Give an example of a propositional function $P(x)$ and a corresponding domain, such that $\exists!x\; P(x)$ is a true proposition.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution} \\
+      x $\in$ students in the class \\
+      P(x) = student x came first \\
+      \[\exists ! x P(x)\]
+      There is only one student who comes first 
     \end{solution}
     
   \part[5] The uniqueness quantifier can be expressed using the other two quantifiers but is still used on its own as it shortens the logical terms. In particular,
@@ -127,12 +238,14 @@
     \end{align}
     Express the proposition on the right above in English and explain why it is equivalent to the left hand side, i.e. to the uniquely quantified propositional function. You may explain in words; a formal proof is not yet required.
     \begin{solution}
-      % Enter your solution here.
+      For some value of x, P(x) is true and for all values of y if P(y) is true that implies that y = x. 
     \end{solution}
     
-  \part[5] Express $\neg \exists!xP\; (x)$ in a similar way as (\ref{eq:uniq}). Provide an expression in formal notation as well as in English. Also, give an example of a true proposition $\neg\exists!x\; P(x)$ by slightly changing the one you gave in part (a).
+  \part[5] Express $\neg \exists!x P\; (x)$ in a similar way as (\ref{eq:uniq}). Provide an expression in formal notation as well as in English. Also, give an example of a true proposition $\neg\exists!x\; P(x)$ by slightly changing the one you gave in part (a).
     \begin{solution}
-      % Enter your solution here.
+      \[\neg (\exists x (P(x) \land \forall y (P(y) \implies y = x )))\]
+      \[\forall x (\neg P(x) \lor \neg \exists y ( P(y) \implies y \ne x)\]
+      For all x either P(x) is false or there is some value of y for which if P(y) is true it implies that x is not equal to y.
     \end{solution}
   \end{parts}
 
@@ -147,25 +260,74 @@
 
   \begin{parts}
   \part[5] No one can have Pakistani and Indian citizenship.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution}\\
+    Let,\\
+        \begin{tabularx}{\textwidth}{l@{ : }X}
+        $P(x)$ & x can have a Pakistani Citizenship.\\
+        $I(x)$ & x can have a Indian Citizenship.\\
+        \end{tabularx}\\
+        \begin{center}
+           $\neg \exists( $P(x)$ \land \neg $I(x)$)$\\
+           $\forall x \neg($P(x)$ \land \neg $I(x)$)$\\
+           $\forall x (\neg $P(x)$ \lor \negI(X)$)\\
+        \end{center}
+    For the Negation of above statement. \\
+        \begin{center}
+           $\neg \forall(\neg $P(x)$ \lor \neg $I(x)$)$\\
+           \exists x \neg(\neg($P(x)$ \lor \neg $I(x)$))\\
+           $\exists x ($P(x) \land $I(X)$\\
+        \end{center}
+    Negation: There exists a person who has both Pakistani and Indian Citizenship.
     \end{solution}
 
   \part[5] If everyone does their homework and goes to the recitations, no one will be badly prepared for the exams.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution}\\
+    Let,\\
+        \begin{tabularx}{\textwidth}{l@{ : }X}
+        $A(x)$ & x do their homework.\\
+        $B(x)$ & x go to the recitation.\\
+        $C(x)$ & x is badly prepared for the exams.\\
+        \end{tabularx}\\ 
+        \begin{center}
+            $\forall x ($A(x)$ \land $B(x)$)$ $\rightarrow \forall x ( \neg $C(x)$ )$\\
+        \end{center}
+    Negation of the above statement:
+    \begin{center}
+            $\forall x ($A(x)$ \land $B(x)$) \land  \exists x ($C(x)$ )$\\
+        \end{center}
+    Negation: If everyone goes to the recitation and does their homework, there still exist a person who is badly prepared for the exams. 
     \end{solution}
 
 
   \part[5] No student has solved at least one exercise in every section of the book.
     \begin{solution}
-      % Enter your solution here.
+      Let,\\
+        \begin{tabularx}{\textwidth}{l@{ : }X}
+         $S(x,y,z)$ & student x has solved exercise y in section z of the book.\\
+        \end{tabularx}\\ 
+        \begin{center}
+            $\neg \exists x \exists y \forall z S(x,y,z)$ \\
+            
+        \end{center}
+    Negation of above statement:
+        \begin{center}
+            $\neg (\neg \exists x \exists y \forall z S(x,y,z))$\\
+            $\exists x \exists y \forall z S(x,y,z))$\\
+        \end{center}
+        There exists a student who has solved at least one exercise from the book.
     \end{solution}
 
     
   \part[5] No one has climbed every mountain in Pakistan.
     \begin{solution}
-      % Enter your solution here.
+        \begin{tabularx}{\textwidth}{l@{ : }X}
+            $T(x,y)$ & person x has climbed mountain y of Pakistan.\\
+        \end{tabularx}\\
+        
+        $>> \neg \exists x \forall y $P(x,y)$\\
+        >> \exists x M(x,y)\\
+        >> $There exists one who has climbed every mountain of Pakistan.
+        
     \end{solution}
   \end{parts}
 
@@ -180,25 +342,33 @@
   \begin{parts}
   \part[5] $\exists p\; (F(p) \land B(p)) \rightarrow \exists j\; L(j)$
     \begin{solution}
-      % Enter your solution here.
+      If some printer p is out of service and busy then it implies that some print job j is lost. 
     \end{solution}
     
   \part[5] $(\forall p\; B(p) \land \forall j\; Q(j)) \rightarrow \exists j\; L(j)$
     \begin{solution}
-      % Enter your solution here.
+      If all printers p are busy and all print jobs j are queued then it is implied that some print job j is lost.
     \end{solution}
   \end{parts}
 
 \question Express each of the system specifications below using suitable predicates, quantifiers, and logical connectives.
   \begin{parts}
   \part[5] At least one mail message can be saved if there is a disk with more than 10KB of free space.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution}\\
+    $D(x,y) = $ x is a Disk has more than y kilobytes of free space.\\
+    $M(X) = $ x can save Mail message.\\
+        \begin{center}
+            $\exists x D(x,10) \implies \exists x S(x)$
+        \end{center}
     \end{solution}
 
   \part[5] The system mailbox can be accessed by everyone in the group if the file system is locked.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution}\\
+    $T(x) = $ In group x, system mail box can be accessed by users.\\
+    $U(x) = $ The file system in group x is locked.\\
+    
+    $\forall x ( U(x) \implies T(x))$
+    
     \end{solution}
   \end{parts}
 
@@ -213,22 +383,27 @@
   \begin{parts}
   \part[5] $\forall x \forall y\; (x^2= y^2 \rightarrow x=y)$
     \begin{solution}
-      % Enter your solution here.
+      For all x and all y, if $x^2 = y^2$ then x = y\\
+      to prove this we will take square roots on both sides
+      \[\sqrt{x^2}=\sqrt{y^2}\]
+      \[x=y\]
+      Hence the proposition is true. 
     \end{solution}
 
   \part[5] $\forall x \exists y\; (y^2=x)$
     \begin{solution}
-      % Enter your solution here.
+      This implies that all integers are whole squares, which we know from math is not true. A counter example could be x = 8. 
     \end{solution}
 
   \part[5] $\exists x \forall y\; (x \leq y^2)$
     \begin{solution}
-      % Enter your solution here.
+      There exists some x that is lesser than the square of all values of y. This is true for all values of x less than zero hence it is true.
     \end{solution}
 
   \part[5] $\forall x \forall y\ \exists z\; (x-z=y)$
     \begin{solution}
-      % Enter your solution here.
+      for all values of x and z there is some value of z for which x-z=y\\
+      This is true because all integers will have a difference of some value even if that value is 0 or a negative number, hence the above mentioned statement is true. 
     \end{solution}
   \end{parts}
   
